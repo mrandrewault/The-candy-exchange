@@ -346,6 +346,16 @@ td.rate{font-family:var(--display);font-weight:400}
 td.mine{font-family:var(--display);font-weight:400;color:var(--accent)}
 
 .legal{margin-top:30px;border-top:4px solid var(--line);padding-top:14px}
+.buyrow{display:flex;align-items:baseline;gap:11px;padding:8px 0;
+  border-top:3px solid var(--rule);font-size:15px;font-weight:600;color:var(--ink)}
+.buyrow:first-of-type{border-top:none}
+.buyrow .bn{font-family:var(--display);font-weight:400;font-size:15px;
+  color:var(--accent);width:22px;flex:none}
+.buyrow .bnm{flex:1;min-width:0}
+.buyrow .bw{font-size:12.5px;font-weight:700;color:var(--soft);white-space:nowrap}
+.buys .punch{margin-top:13px;padding-top:12px;border-top:3px solid var(--rule);
+  font-size:14.5px;font-weight:700;color:var(--ink)}
+.buys .punch em{font-style:normal;color:var(--accent)}
 .legal summary{font-family:var(--display);font-weight:400;font-size:14px;letter-spacing:.04em;
   text-transform:uppercase;color:var(--accent);cursor:pointer;list-style:none;padding:4px 0}
 .legal summary::-webkit-details-marker{display:none}
@@ -509,6 +519,22 @@ td.mine{font-family:var(--display);font-weight:400;color:var(--accent)}
   </table>
 </div>
 
+<details class="legal buys">
+  <summary>What America actually buys</summary>
+  <div class="body">
+    <p>Buying is not the same as wanting. Parents buy in bulk. Kids pick what
+    they like. These two lists do not match, and that is the fun part.</p>
+    <p style="font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-top:14px">
+      Most bought in America, 2026</p>
+    <div id="buys"></div>
+    <p class="punch" id="buysPunch"></p>
+    <p style="font-size:12.5px;margin-top:14px">Sales from CandyStore.com's
+    Most Popular Halloween Candy by State (2026), measured in pounds of
+    Halloween-season sales from 2008 to 2025. A projection, not a count of
+    2026 sales. Free to reference with credit.</p>
+  </div>
+</details>
+
 <details class="legal">
   <summary>About &amp; privacy</summary>
   <div class="body">
@@ -527,18 +553,25 @@ td.mine{font-family:var(--display);font-weight:400;color:var(--accent)}
     Commons Attribution 4.0</a>. 83 candies ranked by 269,000 head-to-head
     matchups. We did not invent any of the numbers.</p>
 
-    <p><b>Privacy: we collect nothing.</b> No accounts. No names, ages or email
-    addresses. No cookies. No tracking. No analytics. Your picks, your haul and
-    your friends' prices live only in your own browser and are gone the moment
-    you close the tab. Nothing is sent anywhere, nothing is stored, and there is
-    nothing to sell. This is a single page of code with no server behind it.</p>
+    <p><b>Privacy.</b> No accounts. No names, no ages, no email addresses. No
+    cookies. No ads. No logins. Your picks, your haul and your friends' prices
+    live only in your own browser and are gone the moment you close the tab.
+    They are never sent anywhere.</p>
+
+    <p><b>We do count visits.</b> We use a privacy-friendly counter that sets no
+    cookies and cannot follow anybody from one website to another. It tells us
+    how many people came and roughly which country they came from, so we know
+    whether real people are using this. That is all it tells us. There is no
+    profile of you, nothing is tied to a person, and nothing is ever sold or
+    shared with anyone.</p>
 
     <p>Made by Ault Industries LLC.</p>
   </div>
 </details>
 
-<p class="foot"><span class="web bl" aria-hidden="true"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M0 0 L100 0 M0 0 L95 31 M0 0 L82 58 M0 0 L58 82 M0 0 L31 95 M0 0 L0 100"/><path d="M26 0 A26 26 0 0 1 0 26"/><path d="M52 0 A52 52 0 0 1 0 52"/><path d="M78 0 A78 78 0 0 1 0 78"/></svg></span>* National rankings come from FiveThirtyEight's Halloween Candy Power Ranking: 83 candies, 269,000 head-to-head matchups, used under CC BY 4.0. They are not from anyone using The Candy Exchange. We collect nothing, store nothing and share nothing. Brand names belong to their owners. Made by Ault Industries LLC.</p>
+<p class="foot"><span class="web bl" aria-hidden="true"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M0 0 L100 0 M0 0 L95 31 M0 0 L82 58 M0 0 L58 82 M0 0 L31 95 M0 0 L0 100"/><path d="M26 0 A26 26 0 0 1 0 26"/><path d="M52 0 A52 52 0 0 1 0 52"/><path d="M78 0 A78 78 0 0 1 0 78"/></svg></span>* National rankings come from FiveThirtyEight's Halloween Candy Power Ranking: 83 candies, 269,000 head-to-head matchups, used under CC BY 4.0. They are not from anyone using The Candy Exchange. We never ask for personal information and never sell or share anything. Brand names belong to their owners. Made by Ault Industries LLC.</p>
 
+<script defer src="/_vercel/insights/script.js"></script>
 <script>
 const CANDY = [{"n":"Twix","v":5.87,"w":81.6,"p":91,"f":"bar","c":"choc","t":["chocolate","caramel","crispy","bar"],"k":"","x":1},{"n":"Reese's Cup","v":5.0,"w":84.2,"p":65,"f":"piece","c":"choc","t":["chocolate","nutty"],"k":"reeses","x":1},{"n":"Snickers","v":4.92,"w":76.7,"p":65,"f":"bar","c":"choc","t":["chocolate","caramel","nutty","nougat","bar"],"k":"snickers","x":1},{"n":"Kit Kat","v":4.75,"w":76.8,"p":51,"f":"bar","c":"choc","t":["chocolate","crispy","bar"],"k":"","x":1},{"n":"Milky Way","v":4.52,"w":73.1,"p":65,"f":"bar","c":"choc","t":["chocolate","caramel","nougat","bar"],"k":"milkyway","x":1},{"n":"Butterfinger","v":4.4,"w":70.7,"p":77,"f":"bar","c":"choc","t":["chocolate","nutty","bar"],"k":"","x":1},{"n":"Reese's Miniatures","v":4.28,"w":81.9,"p":28,"f":"piece","c":"choc","t":["chocolate","nutty"],"k":"reeses","x":0},{"n":"100 Grand","v":4.1,"w":67.0,"p":86,"f":"bar","c":"choc","t":["chocolate","caramel","crispy","bar"],"k":"","x":1},{"n":"Crunch Bar","v":3.95,"w":66.5,"p":77,"f":"bar","c":"choc","t":["chocolate","crispy","bar"],"k":"","x":1},{"n":"Reese's Stuffed","v":3.88,"w":72.9,"p":65,"f":"piece","c":"choc","t":["chocolate","nutty"],"k":"reeses","x":0},{"n":"Milky Way Simply Caramel","v":3.82,"w":64.4,"p":86,"f":"bar","c":"choc","t":["chocolate","caramel","bar"],"k":"milkyway","x":0},{"n":"3 Musketeers","v":3.79,"w":67.6,"p":51,"f":"bar","c":"choc","t":["chocolate","nougat","bar"],"k":"","x":1},{"n":"Hershey's Krackel","v":3.66,"w":62.3,"p":92,"f":"bar","c":"choc","t":["chocolate","crispy","bar"],"k":"hershey","x":0},{"n":"Reese's pieces","v":3.51,"w":73.4,"p":65,"f":"bag","c":"choc","t":["chocolate","nutty"],"k":"reeses","x":1},{"n":"Hershey's Special Dark","v":3.35,"w":59.2,"p":92,"f":"bar","c":"choc","t":["chocolate","bar"],"k":"hershey","x":0},{"n":"Peanut butter M&M's","v":3.34,"w":71.5,"p":65,"f":"bag","c":"choc","t":["chocolate","nutty"],"k":"mms","x":0},{"n":"Peanut M&M's","v":3.18,"w":69.5,"p":65,"f":"bag","c":"choc","t":["chocolate","nutty"],"k":"mms","x":1},{"n":"Snickers Crisper","v":3.15,"w":59.5,"p":65,"f":"bar","c":"choc","t":["chocolate","caramel","nutty","crispy","bar"],"k":"snickers","x":0},{"n":"Milky Way Midnight","v":3.09,"w":60.8,"p":44,"f":"bar","c":"choc","t":["chocolate","caramel","nougat","bar"],"k":"milkyway","x":0},{"n":"Hershey's Bar","v":3.08,"w":56.5,"p":92,"f":"bar","c":"choc","t":["chocolate","bar"],"k":"hershey","x":1},{"n":"Rolo","v":3.05,"w":65.7,"p":86,"f":"bag","c":"choc","t":["chocolate","caramel"],"k":"","x":1},{"n":"Baby Ruth","v":3.0,"w":56.9,"p":77,"f":"bar","c":"choc","t":["chocolate","caramel","nutty","nougat","bar"],"k":"","x":1},{"n":"M&M's","v":2.95,"w":66.6,"p":65,"f":"bag","c":"choc","t":["chocolate"],"k":"mms","x":1},{"n":"Mr. Goodbar","v":2.89,"w":54.5,"p":92,"f":"bar","c":"choc","t":["chocolate","nutty","bar"],"k":"","x":1},{"n":"Starburst","v":2.64,"w":67.0,"p":22,"f":"bag","c":"fruit","t":["fruity"],"k":"","x":1},{"n":"Almond Joy","v":2.42,"w":50.3,"p":77,"f":"bar","c":"choc","t":["chocolate","nutty","bar"],"k":"","x":1},{"n":"Skittles","v":2.37,"w":63.1,"p":22,"f":"bag","c":"fruit","t":["fruity"],"k":"skittles","x":1},{"n":"Mounds","v":2.26,"w":47.8,"p":86,"f":"bar","c":"choc","t":["chocolate","bar"],"k":"","x":1},{"n":"Junior Mints","v":2.17,"w":57.2,"p":51,"f":"bag","c":"choc","t":["chocolate"],"k":"","x":1},{"n":"Swedish Fish","v":2.16,"w":54.9,"p":76,"f":"bag","c":"fruit","t":["fruity"],"k":"","x":1},{"n":"Haribo Gold Bears","v":2.14,"w":57.1,"p":46,"f":"bag","c":"fruit","t":["fruity"],"k":"haribo","x":1},{"n":"Sour Patch Kids","v":2.1,"w":59.9,"p":12,"f":"bag","c":"fruit","t":["fruity"],"k":"sourpatch","x":1},{"n":"Tootsie Roll Snack Bars","v":2.09,"w":49.7,"p":32,"f":"bar","c":"choc","t":["chocolate","bar"],"k":"tootsie","x":0},{"n":"Airheads","v":2.08,"w":52.3,"p":51,"f":"piece","c":"fruit","t":["fruity"],"k":"","x":1},{"n":"Payday","v":2.08,"w":46.3,"p":77,"f":"bar","c":"other","t":["nutty","nougat","bar"],"k":"","x":1},{"n":"Milk Duds","v":2.03,"w":55.1,"p":51,"f":"bag","c":"choc","t":["chocolate","caramel"],"k":"","x":1},{"n":"Life Savers Gummies","v":1.98,"w":52.9,"p":28,"f":"piece","c":"fruit","t":["fruity"],"k":"","x":0},{"n":"Nerds","v":1.94,"w":55.4,"p":32,"f":"bag","c":"fruit","t":["fruity","hard"],"k":"","x":1},{"n":"Skittles Wildberry","v":1.87,"w":55.1,"p":22,"f":"bag","c":"fruit","t":["fruity"],"k":"skittles","x":0},{"n":"Whoppers","v":1.84,"w":49.5,"p":85,"f":"bag","c":"choc","t":["chocolate","crispy"],"k":"","x":1},{"n":"Hershey's Kisses","v":1.81,"w":55.4,"p":9,"f":"bag","c":"choc","t":["chocolate"],"k":"hershey","x":1},{"n":"Haribo Sour Bears","v":1.78,"w":51.4,"p":46,"f":"bag","c":"fruit","t":["fruity"],"k":"haribo","x":0},{"n":"Tootsie Pop","v":1.75,"w":49.0,"p":32,"f":"piece","c":"choc","t":["chocolate","fruity","hard"],"k":"tootsie","x":1},{"n":"Sour Patch Tricksters","v":1.68,"w":52.8,"p":12,"f":"bag","c":"fruit","t":["fruity"],"k":"sourpatch","x":0},{"n":"Gobstopper","v":1.5,"w":46.8,"p":45,"f":"bag","c":"fruit","t":["fruity","hard"],"k":"","x":1},{"n":"Tootsie Roll Juniors","v":1.47,"w":43.1,"p":51,"f":"piece","c":"choc","t":["chocolate"],"k":"tootsie","x":0},{"n":"Trolli Sour Bites","v":1.44,"w":47.2,"p":26,"f":"bag","c":"fruit","t":["fruity"],"k":"trolli","x":0},{"n":"Twizzlers","v":1.44,"w":45.5,"p":12,"f":"piece","c":"fruit","t":["fruity"],"k":"","x":1},{"n":"Charleston Chew","v":1.43,"w":39.0,"p":51,"f":"bar","c":"choc","t":["chocolate","nougat","bar"],"k":"","x":0},{"n":"Mike & Ike","v":1.42,"w":46.4,"p":32,"f":"bag","c":"fruit","t":["fruity"],"k":"","x":1},{"n":"Pop Rocks","v":1.33,"w":41.3,"p":84,"f":"bag","c":"fruit","t":["fruity","hard"],"k":"","x":1},{"n":"Smarties","v":1.32,"w":46.0,"p":12,"f":"bag","c":"fruit","t":["fruity","hard"],"k":"smarties","x":1},{"n":"Welch's Fruit Snacks","v":1.31,"w":44.4,"p":31,"f":"bag","c":"fruit","t":["fruity"],"k":"trolli","x":0},{"n":"Werther's Caramel","v":1.31,"w":41.9,"p":27,"f":"piece","c":"other","t":["caramel","hard"],"k":"","x":0},{"n":"Dots","v":1.27,"w":42.3,"p":51,"f":"bag","c":"fruit","t":["fruity"],"k":"","x":0},{"n":"Tootsie Roll","v":1.26,"w":45.7,"p":1,"f":"bag","c":"choc","t":["chocolate"],"k":"tootsie","x":1},{"n":"Haribo Twin Snakes","v":1.25,"w":42.2,"p":46,"f":"bag","c":"fruit","t":["fruity"],"k":"haribo","x":0},{"n":"Laffy Taffy","v":1.22,"w":41.4,"p":12,"f":"piece","c":"fruit","t":["fruity"],"k":"","x":1},{"n":"Runts","v":1.22,"w":42.8,"p":28,"f":"bag","c":"fruit","t":["fruity","hard"],"k":"","x":1},{"n":"Fun Dip","v":1.18,"w":39.2,"p":32,"f":"piece","c":"fruit","t":["fruity","hard"],"k":"","x":1},{"n":"Smarties (Nestle)","v":1.18,"w":37.9,"p":98,"f":"bag","c":"choc","t":["chocolate"],"k":"smarties","x":0},{"n":"Ring Pop","v":1.17,"w":35.3,"p":96,"f":"piece","c":"fruit","t":["fruity","hard"],"k":"","x":1},{"n":"Fruit Chews","v":1.14,"w":43.1,"p":3,"f":"bag","c":"fruit","t":["fruity"],"k":"","x":0},{"n":"Lemonhead","v":1.1,"w":39.1,"p":10,"f":"piece","c":"fruit","t":["fruity","hard"],"k":"lemonhead","x":1},{"n":"Warheads","v":1.1,"w":39.0,"p":12,"f":"piece","c":"fruit","t":["fruity","hard"],"k":"","x":1},{"n":"Dum Dums","v":1.09,"w":39.5,"p":3,"f":"piece","c":"fruit","t":["fruity","hard"],"k":"","x":1},{"n":"Now & Later","v":1.07,"w":39.4,"p":32,"f":"bag","c":"fruit","t":["fruity"],"k":"","x":1},{"n":"Candy Corn","v":1.0,"w":38.0,"p":32,"f":"bag","c":"other","t":[],"k":"","x":1},{"n":"Chewy Lemonhead","v":0.96,"w":36.0,"p":51,"f":"bag","c":"fruit","t":["fruity"],"k":"lemonhead","x":0},{"n":"Caramel Apple Pops","v":0.94,"w":34.5,"p":32,"f":"piece","c":"fruit","t":["fruity","caramel"],"k":"","x":0},{"n":"Red Vines","v":0.91,"w":37.3,"p":12,"f":"bag","c":"fruit","t":["fruity"],"k":"","x":1},{"n":"Pixy Stix","v":0.9,"w":37.7,"p":2,"f":"bag","c":"other","t":[],"k":"","x":1},{"n":"Sugar Babies","v":0.9,"w":33.4,"p":77,"f":"bag","c":"other","t":["caramel"],"k":"sugar","x":0},{"n":"Haribo Happy Cola","v":0.86,"w":34.2,"p":46,"f":"bag","c":"other","t":[],"k":"haribo","x":0},{"n":"Sugar Daddy","v":0.84,"w":32.2,"p":32,"f":"piece","c":"other","t":["caramel"],"k":"sugar","x":0},{"n":"Sixlets","v":0.79,"w":34.7,"p":8,"f":"bag","c":"choc","t":["chocolate"],"k":"","x":0},{"n":"Strawberry Bon Bons","v":0.78,"w":34.6,"p":6,"f":"bag","c":"fruit","t":["fruity","hard"],"k":"","x":0},{"n":"Jawbreakers","v":0.62,"w":28.1,"p":51,"f":"bag","c":"fruit","t":["fruity","hard"],"k":"","x":1},{"n":"Root Beer Barrels","v":0.6,"w":29.7,"p":7,"f":"bag","c":"other","t":["hard"],"k":"","x":0},{"n":"Super Bubble","v":0.58,"w":27.3,"p":12,"f":"piece","c":"fruit","t":["fruity"],"k":"","x":0},{"n":"Nik-L-Nip","v":0.47,"w":22.4,"p":98,"f":"bag","c":"fruit","t":["fruity"],"k":"","x":0},{"n":"Chiclets","v":0.46,"w":24.5,"p":32,"f":"bag","c":"fruit","t":["fruity"],"k":"","x":0},{"n":"Boston Baked Beans","v":0.45,"w":23.4,"p":51,"f":"bag","c":"other","t":["nutty"],"k":"","x":0}];
 
@@ -710,8 +743,8 @@ function setBlend(t){
   /* Always say what the current side IS. The data side has to earn its
      credibility every time somebody slides onto it. */
   $('hint').textContent =
-      t < 0.02 ? 'Real prices from 269,000 real matchups'
-    : t > 0.98 ? (P().picks >= 4 ? 'Your prices, from your own picks'
+      t < 0.02 ? "Real prices from FiveThirtyEight's 269,000 matchups"
+    : t > 0.98 ? (P().picks >= 4 ? 'Your own prices, from your own picks'
                                  : 'Pick your favorites to make these yours')
     : 'A mix of both';
   $('hint').style.opacity = '1';
@@ -1226,6 +1259,29 @@ $('tabA').onclick = () => setSide('A');
 $('tabB').onclick = () => setSide('B');
 $('reset').onclick = () => { bags.A={}; bags.B={}; setSide('A'); redraw(); };
 $('search').addEventListener('input', drawGrid);
+
+/* The ten best sellers of 2026, from CandyStore.com. Hard-coded because it is
+   a published annual list, not something we can compute. The "most wanted"
+   number beside each one is read live from CANDY, so the two can never drift
+   apart. Three of the ten did not exist in the 2017 survey. */
+const BOUGHT = ["M&M's", 'Sour Patch Kids', 'Skittles', "Reese's Cup",
+  'NERDS Gummy Clusters', 'Hot Tamales', 'Starburst', 'Candy Corn',
+  "Hershey's Mini Bars", 'Butterfinger'];
+const wantRank = n => { const i = CANDY.findIndex(c => c.n === n); return i < 0 ? null : i+1; };
+
+$('buys').innerHTML = BOUGHT.map((n,i) => {
+  const r = wantRank(n);
+  return `<div class="buyrow"><span class="bn">${i+1}</span>
+    <span class="bnm">${n}</span>
+    <span class="bw">${r ? '#' + r + ' most wanted' : 'too new to rank'}</span></div>`;
+}).join('');
+
+(function(){
+  const r = wantRank('Candy Corn');
+  $('buysPunch').innerHTML = `Candy corn is the <em>8th most bought</em> candy in
+    America and <em>#${r} of ${CANDY.length}</em> on the want list. Most handed out,
+    least wanted. That is exactly why it makes a good penny.`;
+})();
 
 $('board').innerHTML = CANDY.map((c,i) =>
   `<tr><td class="rank">${i+1}</td><td>${c.n}</td>
