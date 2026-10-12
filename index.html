@@ -67,10 +67,10 @@ html{overflow-x:hidden;overflow-x:clip}
 .mast h1{font-family:var(--display);font-weight:400;
   font-size:clamp(38px,12.6vw,58px);line-height:1.04;text-transform:uppercase;
   color:var(--fill);-webkit-text-stroke:8px var(--outline);paint-order:stroke fill;
-  text-shadow:4px 4px 0 var(--drop),var(--glow);transform:rotate(-1.6deg);
+  text-shadow:3px 0 0 var(--line),-3px 0 0 var(--line),0 3px 0 var(--line),0 -3px 0 var(--line),2px 2px 0 var(--line),-2px 2px 0 var(--line),2px -2px 0 var(--line),-2px -2px 0 var(--line),7px 8px 0 var(--drop),var(--glow);transform:rotate(-1.6deg);
   transform-origin:left center}
 .mast h1 b{display:block;font-weight:400;color:var(--word);
-  -webkit-text-stroke:8px var(--outline);text-shadow:4px 4px 0 var(--drop2),var(--glow)}
+  -webkit-text-stroke:8px var(--outline);text-shadow:3px 0 0 var(--line),-3px 0 0 var(--line),0 3px 0 var(--line),0 -3px 0 var(--line),2px 2px 0 var(--line),-2px 2px 0 var(--line),2px -2px 0 var(--line),-2px -2px 0 var(--line),7px 8px 0 var(--drop2),var(--glow)}
 .mast p{margin-top:14px;font-size:12px;font-weight:800;letter-spacing:.1em;
   text-transform:uppercase;color:var(--soft)}
 
@@ -126,9 +126,9 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;
   font-family:var(--display);font-size:19px;display:flex;align-items:center;
   justify-content:center;line-height:1;box-shadow:0 4px 0 var(--shadow)}
 .how li span{flex:1;font-family:var(--display);font-weight:400;
-  font-size:clamp(20px,6.2vw,26px);line-height:1.18;text-transform:uppercase;
-  color:var(--fill);-webkit-text-stroke:7px var(--outline);paint-order:stroke fill;
-  text-shadow:3px 3px 0 var(--drop)}
+  font-size:clamp(20px,6.2vw,26px);line-height:1.42;text-transform:uppercase;
+  color:var(--fill);-webkit-text-stroke:4px var(--outline);paint-order:stroke fill;
+  text-shadow:3px 0 0 var(--line),-3px 0 0 var(--line),0 3px 0 var(--line),0 -3px 0 var(--line),2px 2px 0 var(--line),-2px 2px 0 var(--line),2px -2px 0 var(--line),-2px -2px 0 var(--line),5px 6px 0 var(--drop)}
 /* No drop shadow on these. A hard offset shadow needs a single line under
    it; on wrapping text it lands on the next line and the whole thing turns
    to mush. The numbered green circles carry the candy feel instead. */
@@ -170,7 +170,7 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;
 .haul .lead{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
 .haul .huge{font-family:var(--display);font-weight:400;font-size:clamp(50px,17vw,74px);
   line-height:1.02;margin:6px 0 2px;color:var(--fill);-webkit-text-stroke:8px var(--outline);
-  paint-order:stroke fill;text-shadow:4px 4px 0 var(--drop),var(--glow)}
+  paint-order:stroke fill;text-shadow:3px 0 0 var(--line),-3px 0 0 var(--line),0 3px 0 var(--line),0 -3px 0 var(--line),2px 2px 0 var(--line),-2px 2px 0 var(--line),2px -2px 0 var(--line),-2px -2px 0 var(--line),7px 8px 0 var(--drop),var(--glow)}
 .haul .unit{font-family:var(--display);font-weight:400;font-size:16px;text-transform:uppercase;
   color:var(--accent);letter-spacing:.04em}
 .haul .facts{margin-top:14px;border-top:3px solid var(--rule);padding-top:4px;text-align:left}
@@ -197,7 +197,7 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;
 .side h3{font-size:11px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--soft)}
 .tally{font-family:var(--display);font-weight:400;font-size:40px;line-height:1;
   margin:4px 0 8px;color:var(--fill);-webkit-text-stroke:6px var(--outline);
-  paint-order:stroke fill;text-shadow:3px 3px 0 var(--drop),var(--glow)}
+  paint-order:stroke fill;text-shadow:3px 0 0 var(--line),-3px 0 0 var(--line),0 3px 0 var(--line),0 -3px 0 var(--line),2px 2px 0 var(--line),-2px 2px 0 var(--line),2px -2px 0 var(--line),-2px -2px 0 var(--line),6px 7px 0 var(--drop),var(--glow)}
 .tally small{display:block;font-family:var(--sans);font-size:10px;font-weight:800;
   letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-top:5px;
   -webkit-text-stroke:0;text-shadow:none}
@@ -217,9 +217,9 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;
 .vtag{font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--soft)}
 .verdict .call{font-family:var(--display);font-weight:400;
   font-size:clamp(30px,9.4vw,40px);line-height:1.12;text-transform:uppercase;margin-top:6px;
-  color:var(--fill);-webkit-text-stroke:7px var(--outline);paint-order:stroke fill;
-  text-shadow:4px 4px 0 var(--accent),var(--glow)}
-.down .call{text-shadow:4px 4px 0 var(--warn),var(--glow)}
+  color:var(--fill);-webkit-text-stroke:4px var(--outline);paint-order:stroke fill;
+  text-shadow:3px 0 0 var(--line),-3px 0 0 var(--line),0 3px 0 var(--line),0 -3px 0 var(--line),2px 2px 0 var(--line),-2px 2px 0 var(--line),2px -2px 0 var(--line),-2px -2px 0 var(--line),6px 7px 0 var(--accent),var(--glow)}
+.down .call{text-shadow:3px 0 0 var(--line),-3px 0 0 var(--line),0 3px 0 var(--line),0 -3px 0 var(--line),2px 2px 0 var(--line),-2px 2px 0 var(--line),2px -2px 0 var(--line),-2px -2px 0 var(--line),6px 7px 0 var(--warn),var(--glow)}
 .verdict .why{font-size:13.5px;font-weight:600;color:var(--soft);margin-top:9px;max-width:38ch}
 .bar{height:15px;background:var(--panel);border:4px solid var(--line);border-radius:10px;
   margin-top:13px;position:relative;overflow:hidden}
@@ -293,7 +293,7 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;
 .done{padding:18px 14px 16px;text-align:center}
 .done .dbig{font-family:var(--display);font-weight:400;font-size:25px;line-height:1.18;
   text-transform:uppercase;color:var(--fill);-webkit-text-stroke:6px var(--outline);
-  paint-order:stroke fill;text-shadow:3px 3px 0 var(--drop),var(--glow)}
+  paint-order:stroke fill;text-shadow:3px 0 0 var(--line),-3px 0 0 var(--line),0 3px 0 var(--line),0 -3px 0 var(--line),2px 2px 0 var(--line),-2px 2px 0 var(--line),2px -2px 0 var(--line),-2px -2px 0 var(--line),6px 7px 0 var(--drop),var(--glow)}
 .done p.sub{font-size:13.5px;font-weight:600;color:var(--soft);margin-top:10px}
 .dbtns{display:flex;gap:9px;margin-top:14px}
 .dbtns button{flex:1;padding:12px 8px;font-size:14px;text-transform:uppercase}
@@ -303,7 +303,7 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;
 .callout{position:relative;padding:18px 16px}
 .callout .big{font-family:var(--display);font-weight:400;font-size:24px;line-height:1.2;
   text-transform:uppercase;color:var(--fill);-webkit-text-stroke:6px var(--outline);
-  paint-order:stroke fill;text-shadow:3px 3px 0 var(--drop),var(--glow);max-width:16ch}
+  paint-order:stroke fill;text-shadow:3px 0 0 var(--line),-3px 0 0 var(--line),0 3px 0 var(--line),0 -3px 0 var(--line),2px 2px 0 var(--line),-2px 2px 0 var(--line),2px -2px 0 var(--line),-2px -2px 0 var(--line),6px 7px 0 var(--drop),var(--glow);max-width:16ch}
 .callout p{font-size:13.5px;font-weight:600;color:var(--soft);margin-top:11px}
 
 /* ---------- trade away / keep ---------- */
