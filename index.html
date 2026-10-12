@@ -415,11 +415,11 @@ td.mine{font-family:var(--display);font-weight:400;color:var(--accent)}
 
 <div class="dialwrap"><div class="dial">
   <div class="dlabels">
-    <span id="labM" class="on">Data nerds</span>
-    <span id="labC">You &amp; friends</span>
+    <span id="labM" class="on">You &amp; friends</span>
+    <span id="labC">Data nerds</span>
   </div>
-  <input type="range" id="dial" min="0" max="100" value="100" step="1"
-         aria-label="Slide between your friends' prices and the true market">
+  <input type="range" id="dial" min="0" max="100" value="0" step="1"
+         aria-label="Slide between your friends' prices and the data nerds' prices">
   <p class="hint" id="hint">Slide left to see real prices &rarr;</p>
 </div></div>
 
@@ -704,8 +704,8 @@ $('goMore').onclick = () => { P().target += ROUND; nextPair(); redraw(); };
 function setBlend(t){
   blend = t;
   paint(t);
-  $('labM').classList.toggle('on', t < 0.5);
-  $('labC').classList.toggle('on', t >= 0.5);
+  $('labM').classList.toggle('on', t >= 0.5);
+  $('labC').classList.toggle('on', t < 0.5);
   $('drawer').classList.toggle('open', t > 0.04);
   /* Always say what the current side IS. The data side has to earn its
      credibility every time somebody slides onto it. */
@@ -717,7 +717,9 @@ function setBlend(t){
   $('hint').style.opacity = '1';
   redraw();
 }
-$('dial').addEventListener('input', e => setBlend(+e.target.value/100));
+/* The track runs backwards on purpose: 0 at the left is YOUR prices,
+   100 at the right is the data nerds'. */
+$('dial').addEventListener('input', e => setBlend(1 - (+e.target.value/100)));
 
 /* ======================================================================
    5. TRADE COUNTER
@@ -1201,7 +1203,7 @@ $('pickL').onclick = () => { castVote(pair[0].n, pair[1].n); if(P().picks < P().
 $('pickR').onclick = () => { castVote(pair[1].n, pair[0].n); if(P().picks < P().target) nextPair(); redraw(); };
 $('vreset').onclick = () => {
   players = [newPlayer('Player 1')]; me = 0; deck = []; shown.clear();
-  $('dial').value = 100; setBlend(1); nextPair(); redraw();
+  $('dial').value = 0; setBlend(1); nextPair(); redraw();
 };
 
 /* ---------- wiring ---------- */
@@ -1253,7 +1255,7 @@ $('gotit').onclick = () => {
   $('vote').scrollIntoView({behavior:'smooth', block:'center'});
 };
 
-$('dial').value = 100;
+$('dial').value = 0;
 nextPair();
 setBlend(1);
 
